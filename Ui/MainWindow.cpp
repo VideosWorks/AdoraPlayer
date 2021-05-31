@@ -15,6 +15,7 @@ MainWindow::MainWindow(QWidget* parent)
     this->setAttribute(Qt::WA_TranslucentBackground);
 
 	this->mousePressed = false;
+	this->resizeBehavior = ResizeBehavior::Nothing;
 
 	this->setContentsMargins(0, 0, 5, 5);
 	QGraphicsDropShadowEffect* wndShadow = new QGraphicsDropShadowEffect(this);
