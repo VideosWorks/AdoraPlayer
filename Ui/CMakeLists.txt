@@ -38,6 +38,7 @@ set(Ui_HEADERS
 
 set(Ui_UI
     MainWindow.ui
+    FrameWidget.ui
     )
 
 add_library(Ui

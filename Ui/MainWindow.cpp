@@ -1,6 +1,10 @@
 #include "MainWindow.h"
 #include "./ui_MainWindow.h"
 
+#ifdef Q_OS_WIN
+#include <QGraphicsDropShadowEffect>
+#endif
+
 MainWindow::MainWindow(QWidget* parent)
     : QMainWindow(parent), ui(new Ui::MainWindow) {
 
@@ -10,7 +14,20 @@ MainWindow::MainWindow(QWidget* parent)
     this->setWindowFlags(Qt::FramelessWindowHint);
     this->setAttribute(Qt::WA_TranslucentBackground);
 	this->mousePressed = false;
+
+	this->setContentsMargins(0, 0, 5, 5);
+	QGraphicsDropShadowEffect* wndShadow = new QGraphicsDropShadowEffect(this);
+	wndShadow->setBlurRadius(5.0);
+	wndShadow->setColor(QColor(0, 0, 0, 100));
+	wndShadow->setOffset(2.0);
+	this->setGraphicsEffect(wndShadow);
+
 #endif 
+	
+#ifndef Q_OS_WIN
+
+	ui->frameWidget->hide();
+#endif
 
 }
 
@@ -27,7 +44,7 @@ MainWindow::~MainWindow() {
 void MainWindow::paintEvent(QPaintEvent* event) {
 
 	QPainter painter(this);
-
+	/*
 	painter.setRenderHint(QPainter::Antialiasing); // Anti-aliasing;
 	painter.setBrush(QBrush(QColor("#424242")));
 	painter.setPen(Qt::transparent);
@@ -35,6 +52,8 @@ void MainWindow::paintEvent(QPaintEvent* event) {
 	rect.setWidth(rect.width());
 	rect.setHeight(rect.height());
 	painter.drawRoundedRect(rect, 14, 14);
+	*/
+	
 }
 
 void MainWindow::mousePressEvent(QMouseEvent* event) {
