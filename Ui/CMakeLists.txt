@@ -28,10 +28,12 @@ endif()
 
 set(Ui_SOURCES
     MainWindow.cpp
+    FrameWidget.cpp
    )
 
 set(Ui_HEADERS
     MainWindow.h
+    FrameWidget.h
     )
 
 set(Ui_UI
