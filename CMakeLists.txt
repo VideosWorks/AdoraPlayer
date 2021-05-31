@@ -17,6 +17,7 @@ endif()
 find_package(Qt5 COMPONENTS Gui Core Widgets REQUIRED)
 
 add_subdirectory(Ui)
+add_subdirectory(Base)
 
 list(APPEND SOURCES
     main.cpp
@@ -43,5 +44,5 @@ else()
 
 endif()
 
-target_link_libraries(AdoraPlayer Ui Qt5::Gui Qt5::Core Qt5::Widgets  )
+target_link_libraries(AdoraPlayer Ui Base Qt5::Gui Qt5::Core Qt5::Widgets  )
 

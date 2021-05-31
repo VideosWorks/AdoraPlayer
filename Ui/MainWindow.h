@@ -3,6 +3,7 @@
 
 #include <QMainWindow>
 #include <qpoint.h>
+#include "../Base/Namespace.h"
 
 QT_BEGIN_NAMESPACE
 namespace Ui { class MainWindow; }
@@ -12,9 +13,13 @@ class MainWindow : public QMainWindow {
     Q_OBJECT
 
 private:
+    Ui::MainWindow* ui;
+
+private:
 #ifdef Q_OS_WIN
     bool mousePressed;
     QPoint prev;
+    ResizeBehavior resizeBehavior;
 #endif 
 
 public:
@@ -27,9 +32,17 @@ protected:
     virtual void mousePressEvent(QMouseEvent* event);
     virtual void mouseMoveEvent(QMouseEvent* event);
     virtual void mouseReleaseEvent(QMouseEvent* event);
-#endif 
+
 
 private:
-    Ui::MainWindow *ui;
+    void getResizeBehavior(QMouseEvent* event);
+    void resize(const QPoint& prev, const QPoint& current);
+#endif 
+
+
+
+
+
+
 };
 #endif // MAINWINDOW_H
