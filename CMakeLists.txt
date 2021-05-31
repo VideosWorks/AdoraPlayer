@@ -20,6 +20,7 @@ add_subdirectory(Ui)
 
 list(APPEND SOURCES
     main.cpp
+    AdoraPlayer.qrc
     )
 
 

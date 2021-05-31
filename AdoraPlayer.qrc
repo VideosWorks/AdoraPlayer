@@ -1,0 +1,13 @@
+<RCC>
+    <qresource prefix="/Main">
+        <file alias="always-pin">Resources/Image/always-pin.png</file>
+        <file alias="close">Resources/Image/close.png</file>
+        <file alias="fullscreen">Resources/Image/fullscreen.png</file>
+        <file alias="maximize">Resources/Image/maximize.png</file>
+        <file alias="minimize">Resources/Image/minimize.png</file>
+        <file alias="never-pin">Resources/Image/never-pin.png</file>
+        <file alias="onlyPlay-pin">Resources/Image/onlyPlay-pin.png</file>
+        <file alias="restore">Resources/Image/restore.png</file>
+        <file alias="settings">Resources/Image/settings.png</file>
+    </qresource>
+</RCC>
