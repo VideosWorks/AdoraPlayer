@@ -10,6 +10,8 @@ MainWindow::MainWindow(QWidget* parent)
 
     ui->setupUi(this);
 
+	
+
 #ifdef Q_OS_WIN
     this->setWindowFlags(Qt::FramelessWindowHint);
     this->setAttribute(Qt::WA_TranslucentBackground);
@@ -24,6 +26,9 @@ MainWindow::MainWindow(QWidget* parent)
 	wndShadow->setOffset(2.0);
 	this->setGraphicsEffect(wndShadow);
 
+	//this->showFullScreen();
+	//this->setContentsMargins(0, 0, 0, 0);
+	
 #endif 
 	
 #ifndef Q_OS_WIN

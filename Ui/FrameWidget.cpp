@@ -1,6 +1,7 @@
 
 #include "FrameWidget.h"
 #include <./ui_FrameWidget.h>
+#include <qpainter.h>
 
 FrameWidget::FrameWidget(QWidget* parent)
 	:QWidget(parent),ui(new Ui::FrameWidget) {
@@ -29,6 +30,13 @@ FrameWidget::FrameWidget(QWidget* parent)
 FrameWidget::~FrameWidget() {
 
 	delete ui;
+}
+
+void FrameWidget::paintEvent(QPaintEvent* event) {
+
+	QPainter painter(this);
+
+	painter.fillRect(this->rect(), QColor("#FFC23D"));
 }
 
 

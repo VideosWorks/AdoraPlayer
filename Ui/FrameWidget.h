@@ -19,6 +19,9 @@ public:
 	FrameWidget(QWidget* parent = nullptr);
 	~FrameWidget();
 
+protected:
+	virtual void paintEvent(QPaintEvent* event);
+
 
 private slots:
 	void closeButtonClicked();

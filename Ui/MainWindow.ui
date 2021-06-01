@@ -17,11 +17,7 @@
    <string>MainWindow</string>
   </property>
   <property name="styleSheet">
-   <string notr="true">QWidget#centralwidget {
-   background-color: #FFC23D;
-   border-radius: 15px;
-   overflow: hidden;
-}
+   <string notr="true">
 
 QWidget#widget_2 {
     background-color:#AAAAAA;

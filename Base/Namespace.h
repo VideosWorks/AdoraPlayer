@@ -15,4 +15,13 @@ enum class ResizeBehavior {
 	ResizeRight,
 };
 
+
+enum class CurrentWindowMode {
+
+	Maximized,
+	Minimized,
+	FullScreen,
+	Restored,
+};
+
 #endif //_NAMESPACE_H
