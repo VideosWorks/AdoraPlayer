@@ -1,5 +1,7 @@
 #include "MainWindow.h"
 #include "./ui_MainWindow.h"
+#include "../Chain/RequestStrategy.h"
+#include "../Chain/RequestStrategyFactory.h"
 
 #ifdef Q_OS_WIN
 #include <QGraphicsDropShadowEffect>
@@ -8,6 +10,7 @@
 #endif
 
 #include <qdebug.h>
+#include <QMouseEvent>
 
 MainWindow::MainWindow(QWidget* parent)
     : QMainWindow(parent), ui(new Ui::MainWindow) {
@@ -31,6 +34,7 @@ MainWindow::MainWindow(QWidget* parent)
 	this->setGraphicsEffect(wndShadow);
 
 	this->setWindowMode(CurrentWindowMode::Restored);
+	ui->frameWidget->setChain(this);
 	
 #endif 
 	
@@ -53,9 +57,21 @@ MainWindow::~MainWindow() {
 }
 
 
+void MainWindow::request(Request* request) {
+
+	RequestStrategy* strategy = RequestStrategyFactory::create(this, request);
+
+	if (strategy != nullptr) {
+	
+		strategy->response();
+
+		delete strategy;
+	}
+}
 
 
-#include <QMouseEvent>
+
+
 
 void MainWindow::mousePressEvent(QMouseEvent* event) {
 	

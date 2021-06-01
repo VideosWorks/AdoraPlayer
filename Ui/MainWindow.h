@@ -3,6 +3,8 @@
 
 #include <QMainWindow>
 #include "../Base/Namespace.h"
+#include "../Chain/Chain.h"
+
 
 #ifdef Q_OS_WIN
 class WindowMode;
@@ -12,7 +14,7 @@ QT_BEGIN_NAMESPACE
 namespace Ui { class MainWindow; }
 QT_END_NAMESPACE
 
-class MainWindow : public QMainWindow {
+class MainWindow : public QMainWindow , public Chain {
     Q_OBJECT
 
 private:
@@ -26,6 +28,9 @@ private:
 public:
     MainWindow(QWidget *parent = nullptr);
     ~MainWindow();
+
+    virtual void request(Request* request);
+
 
 protected:
 

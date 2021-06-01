@@ -2,6 +2,7 @@
 #include "FrameWidget.h"
 #include <./ui_FrameWidget.h>
 #include <qpainter.h>
+#include "../Chain/Request.h"
 
 FrameWidget::FrameWidget(QWidget* parent)
 	:QWidget(parent),ui(new Ui::FrameWidget) {
@@ -46,14 +47,20 @@ void FrameWidget::closeButtonClicked() {
 
 void FrameWidget::maximizeButtonClicked() {
 
+	RequestChangeWindowMode request(CurrentWindowMode::Maximized);
+	this->request(&request);
 }
 
 void FrameWidget::minimizeButtonClicked() {
 
+	RequestChangeWindowMode request(CurrentWindowMode::Minimized);
+	this->request(&request);
 }
 
 void FrameWidget::restoreButtonClicked() {
 
+	RequestChangeWindowMode request(CurrentWindowMode::Restored);
+	this->request(&request);
 }
 
 void FrameWidget::alwaysPinButtonClicked() {
@@ -74,4 +81,6 @@ void FrameWidget::settingsButtonClicked() {
 
 void FrameWidget::fullscreenButtonClicked() {
 
+	RequestChangeWindowMode request(CurrentWindowMode::FullScreen);
+	this->request(&request);
 }

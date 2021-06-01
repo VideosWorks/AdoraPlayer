@@ -7,10 +7,13 @@ QT_BEGIN_NAMESPACE
 namespace Ui { class FrameWidget; }
 QT_END_NAMESPACE
 
-class FrameWidget : public QWidget {
+
+#include "../Chain/Chain.h"
+
+
+class FrameWidget : public QWidget, public Chain {
 
 	Q_OBJECT
-
 
 private:
 	Ui::FrameWidget* ui;
