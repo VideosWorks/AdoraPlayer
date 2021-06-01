@@ -35,6 +35,8 @@ MainWindow::MainWindow(QWidget* parent)
 
 	this->setWindowMode(CurrentWindowMode::Restored);
 	ui->frameWidget->setChain(this);
+
+	
 	
 #endif 
 	
@@ -42,6 +44,10 @@ MainWindow::MainWindow(QWidget* parent)
 
 	ui->frameWidget->hide();
 #endif
+
+
+
+	this->observers.append(ui->frameWidget);
 
 }
 

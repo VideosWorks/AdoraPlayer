@@ -5,7 +5,7 @@
 #include "../Chain/Request.h"
 
 FrameWidget::FrameWidget(QWidget* parent)
-	:QWidget(parent),ui(new Ui::FrameWidget) {
+	:QWidget(parent), ui(new Ui::FrameWidget) {
 
 	ui->setupUi(this);
 
@@ -32,6 +32,13 @@ FrameWidget::~FrameWidget() {
 
 	delete ui;
 }
+
+
+void FrameWidget::updateNotifyEvent(NotifyEvent* event) {
+
+	int a;
+}
+
 
 void FrameWidget::paintEvent(QPaintEvent* event) {
 

@@ -5,7 +5,9 @@
 #include "../Base/Namespace.h"
 #include "../Chain/Chain.h"
 
+#include <qlist.h>
 
+class Observer;
 #ifdef Q_OS_WIN
 class WindowMode;
 #endif 
@@ -24,6 +26,9 @@ private:
 private:
     WindowMode* windowMode;
 #endif 
+
+private:
+    QList<Observer*> observers;
 
 public:
     MainWindow(QWidget *parent = nullptr);

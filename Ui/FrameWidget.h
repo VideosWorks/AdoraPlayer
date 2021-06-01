@@ -9,9 +9,10 @@ QT_END_NAMESPACE
 
 
 #include "../Chain/Chain.h"
+#include "../NotifyEvent/Observer.h"
 
 
-class FrameWidget : public QWidget, public Chain {
+class FrameWidget : public QWidget, public Chain, public Observer {
 
 	Q_OBJECT
 
@@ -21,6 +22,8 @@ private:
 public:
 	FrameWidget(QWidget* parent = nullptr);
 	~FrameWidget();
+
+	virtual void updateNotifyEvent(NotifyEvent* event);
 
 protected:
 	virtual void paintEvent(QPaintEvent* event);

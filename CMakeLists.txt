@@ -19,6 +19,7 @@ find_package(Qt5 COMPONENTS Gui Core Widgets REQUIRED)
 add_subdirectory(Ui)
 add_subdirectory(Base)
 add_subdirectory(Chain)
+add_subdirectory(NotifyEvent)
 
 
 if(WIN32)
@@ -51,7 +52,7 @@ else()
 endif()
 
 if(WIN32)
-target_link_libraries(AdoraPlayer Ui Base WindowMode Chain Qt5::Gui Qt5::Core Qt5::Widgets  )
+target_link_libraries(AdoraPlayer Ui Base WindowMode Chain NotifyEvent Qt5::Gui Qt5::Core Qt5::Widgets  )
 elseif(APPLE)
-target_link_libraries(AdoraPlayer Ui Base Chain Qt5::Gui Qt5::Core Qt5::Widgets  )
+target_link_libraries(AdoraPlayer Ui Base Chain NotifyEvent Qt5::Gui Qt5::Core Qt5::Widgets  )
 endif()
