@@ -23,9 +23,7 @@ WindowMode* WindowModeFactory::create(MainWindow* mainWindow, CurrentWindowMode 
 		windowMode = new MaximizedMode(mainWindow);
 
 	else if (mode == CurrentWindowMode::Restored)
-		windowMode == new RestoredMode(mainWindow);
-
-
+		windowMode = new RestoredMode(mainWindow);
 
 	return windowMode;
 }

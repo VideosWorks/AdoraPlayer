@@ -7,7 +7,6 @@ add_definitions(-DGL_SILENCE_DEPRECATION)
 
 find_package(Qt5 COMPONENTS OpenGL Gui Core Widgets REQUIRED)
 
-
 if(APPLE)
     list(APPEND EXTRA_LIBS
         "-framework OpenGL"

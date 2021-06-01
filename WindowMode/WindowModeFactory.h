@@ -7,7 +7,6 @@
 class MainWindow;
 class WindowMode;
 
-
 class WindowModeFactory {
 
 public:

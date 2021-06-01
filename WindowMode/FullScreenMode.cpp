@@ -15,3 +15,17 @@ void FullScreenMode::resizeEvent(QResizeEvent* event) {
 
 
 }
+
+
+void FullScreenMode::mousePressEvent(QMouseEvent* event) {
+
+}
+
+void FullScreenMode::mouseMoveEvent(QMouseEvent* event) {
+
+}
+
+void FullScreenMode::mouseReleaseEvent(QMouseEvent* event) {
+
+
+}

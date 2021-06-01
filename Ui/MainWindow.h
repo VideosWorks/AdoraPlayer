@@ -2,8 +2,11 @@
 #define MAINWINDOW_H
 
 #include <QMainWindow>
-#include <qpoint.h>
 #include "../Base/Namespace.h"
+
+#ifdef Q_OS_WIN
+class WindowMode;
+#endif 
 
 QT_BEGIN_NAMESPACE
 namespace Ui { class MainWindow; }
@@ -15,11 +18,9 @@ class MainWindow : public QMainWindow {
 private:
     Ui::MainWindow* ui;
 
-private:
 #ifdef Q_OS_WIN
-    bool mousePressed;
-    QPoint prev;
-    ResizeBehavior resizeBehavior;
+private:
+    WindowMode* windowMode;
 #endif 
 
 public:
@@ -27,16 +28,17 @@ public:
     ~MainWindow();
 
 protected:
-#ifdef Q_OS_WIN
-    virtual void paintEvent(QPaintEvent* event);
+
     virtual void mousePressEvent(QMouseEvent* event);
     virtual void mouseMoveEvent(QMouseEvent* event);
     virtual void mouseReleaseEvent(QMouseEvent* event);
 
 
 private:
-    void getResizeBehavior(QMouseEvent* event);
-    void resize(const QPoint& prev, const QPoint& current);
+    
+
+#ifdef Q_OS_WIN
+    void setWindowMode(CurrentWindowMode mode);
 #endif 
 
 
